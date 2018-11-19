@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/app.scss';
+import TopNav from '../components/TopNav';
 
 const App = () => (
-    <div>
-        hello
-    </div>
-  );
+  <div>
+    <TopNav />
+  </div>
+);
 
 export default App;
