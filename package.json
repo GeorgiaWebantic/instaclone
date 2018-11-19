@@ -1,7 +1,7 @@
 {
-  "name": "react-bootstrap",
+  "name": "instaclone",
   "version": "1.0.0",
-  "description": "react bootstrap application",
+  "description": "instaclone application",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -10,7 +10,7 @@
   "keywords": [
     "react"
   ],
-  "author": "Manchester Codes",
+  "author": "Team Squirrels",
   "license": "ISC",
   "repository": {
     "type": "git",
