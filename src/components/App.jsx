@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/app.scss';
 import { Switch, Route } from 'react-router-dom';
 import Login from '../components/Login';
+import TopNav from '../components/TopNav';
 
 class App extends React.Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <TopNav />
         <Switch>
           <Route
             exact
