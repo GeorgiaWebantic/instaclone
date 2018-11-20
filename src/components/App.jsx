@@ -5,6 +5,8 @@ import Login from '../components/Login';
 import TopNav from '../components/TopNav';
 import SignUp from '../components/SignUp';
 import TokenManager from '../utils/token-manager';
+import Home from '../components/Home';
+import AuthRoute from '../components/AuthRoute';
 
 class App extends React.Component {
   constructor() {
@@ -30,13 +32,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <TopNav
           isLoggedIn={this.isLoggedIn()}
           user={this.state.user}
           onLogout={this.handleLogout}
         />
         <Switch>
+          <Route
+            exact
+            path="/"
+            component={Home}
+          />
           <Route
             exact
             path="/login"
@@ -50,7 +57,7 @@ class App extends React.Component {
             component={SignUp}
           />
         </Switch>
-      </div>
+      </React.Fragment>
     );
   }
 }
