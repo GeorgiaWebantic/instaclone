@@ -31,11 +31,12 @@
             transition: background-color 0.3s ease;
             border: 0.2em solid #488b8f;
             border-radius: 2em;
-            padding: 0.7em 3em;
+            padding: 0.4em 2em;
             color: white;
             font-size: 0.9em;
             font-weight: 700;
             margin-top: 2em;
+            text-decoration: none;
             &:focus{
                 outline: none;
             }
