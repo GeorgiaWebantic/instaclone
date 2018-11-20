@@ -3,6 +3,7 @@ import '../styles/app.scss';
 import { Switch, Route } from 'react-router-dom';
 import Login from '../components/Login';
 import TopNav from '../components/TopNav';
+import SignUp from '../components/SignUp';
 
 class App extends React.Component {
   constructor() {
@@ -21,6 +22,11 @@ class App extends React.Component {
             exact
             path="/login"
             component={Login}
+          />
+          <Route
+            exact
+            path="/sign-up"
+            component={SignUp}
           />
         </Switch>
       </div>

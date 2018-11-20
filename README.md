@@ -1,6 +1,6 @@
 # Instaclone
 
-Our iamge uploader app
+Our image uploader app
 
 ## Getting Started
 
