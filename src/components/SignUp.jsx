@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/signup.scss';
+import axios from 'axios';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -11,6 +12,23 @@ class SignUp extends React.Component {
       password: '',
     };
   }
+
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  handleLogin = () => {
+    axios.post('http://mcr-codes-image-sharing-api.herokuapp.com/users', {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+    })
+      .then(() => {
+        this.props.history.push('/login');
+      });
+  };
 
   render() {
     return (
@@ -53,7 +71,7 @@ class SignUp extends React.Component {
           <label htmlFor="email">
             Password:
             <input
-              type="text"
+              type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleInputChange}
