@@ -1,0 +1,16 @@
+.BottomNav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  width: 100%;
+  padding: .5em;
+  text-align: center;
+  border-top: 1px solid #b7b5b5;
+  display: flex;
+  color:black;
+}
+.bottomNavLink{
+  color: black;
+  text-decoration: none;
+}
