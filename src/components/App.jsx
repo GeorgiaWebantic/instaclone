@@ -7,6 +7,7 @@ import SignUp from '../components/SignUp';
 import TokenManager from '../utils/token-manager';
 import Home from '../components/Home';
 import AuthRoute from '../components/AuthRoute';
+import BottomNav from '../components/BottomNav';
 
 class App extends React.Component {
   constructor() {
@@ -57,6 +58,9 @@ class App extends React.Component {
             component={SignUp}
           />
         </Switch>
+        <BottomNav
+          isLoggedIn={this.isLoggedIn()}
+        />
       </React.Fragment>
     );
   }
