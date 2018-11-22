@@ -43,6 +43,7 @@ class App extends React.Component {
             exact
             path="/"
             component={Home}
+            user={this.state.user}
           />
           <Route
             exact

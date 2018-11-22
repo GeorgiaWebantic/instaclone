@@ -26,6 +26,12 @@
         margin-right: 0.5em;
     }
 
+    & .username{
+        display: inline-block;
+        margin-right: .4em;
+        font-weight: 600;
+    }
+
     & .image{
         display: flex;
         width: 100%;

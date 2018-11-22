@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/home.scss';
 import PostCard from '../components/PostCard';
 import axios from 'axios';
+import TokenManager from '../utils/token-manager';
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,14 +16,15 @@ class Home extends React.Component {
         caption: '',
       }],
       userID: null,
+      user: TokenManager.isTokenValid() ? TokenManager.getTokenPayload() : null,
     };
   }
+
 
   componentDidMount() {
     axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.posts)
       .then((response) => {
         console.log(response.data);
-        console.log(this.userID);
         this.setState({
           posts: response.data,
         });
@@ -30,17 +32,19 @@ class Home extends React.Component {
   }
 
   render() {
+    console.log(this.state.user);
     return (
       <div className="home-container">
         {this.state.posts.map((post) => {
+          console.log(post);
           return (
             <PostCard
               key={post._id}
-              user={post.user}
+              user={this.state.user}
               src={post.src}
               comments={post.comments}
               caption={post.caption}
-              userID={this.props.userID}
+              userID={this.state.userID}
             />
           );
         })}

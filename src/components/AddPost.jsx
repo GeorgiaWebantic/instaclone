@@ -81,9 +81,6 @@ class AddPost extends React.Component {
         error: 'The form is invalid',
       });
     }
-    console.log(this.state.src);
-    console.log(this.state.file);
-    console.log(this.state.fields.caption);
   };
 
 
