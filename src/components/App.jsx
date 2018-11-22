@@ -8,6 +8,7 @@ import TokenManager from '../utils/token-manager';
 import Home from '../components/Home';
 import AddPost from '../components/AddPost';
 import BottomNav from '../components/BottomNav';
+import Profile from '../components/Profile';
 
 class App extends React.Component {
   constructor() {
@@ -63,6 +64,13 @@ class App extends React.Component {
             path="/add-post"
             component={AddPost}
           />
+          <Route
+            exact
+            path="/profile-page"
+            render={props => (
+              <Profile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
+            )}
+           />
         </Switch>
         <BottomNav
           isLoggedIn={this.isLoggedIn()}

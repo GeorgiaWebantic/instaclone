@@ -1,0 +1,25 @@
+.profilePictureA{
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+
+  margin: 3em;
+}
+.profileName{
+  font-size: 30px;
+  margin-top: 2em;
+}
+.profilePage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.editProfileButton{
+  background-color: #f5f5f5;
+  width: 80%;
+  margin-bottom: 2em;
+  font-size: 15px;
+  border: 2px solid #b7b5b5;
+  padding: 10px;
+}
