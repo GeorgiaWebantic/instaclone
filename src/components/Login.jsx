@@ -20,11 +20,12 @@ class Login extends React.Component {
   };
 
   handleLogin = () => {
-    axios.post('http://mcr-codes-image-sharing-api.herokuapp.com/auth/login', {
+    axios.post('https://mcr-codes-image-sharing-api.herokuapp.com/auth/login', {
       email: this.state.email,
       password: this.state.password,
     })
       .then((response) => {
+        console.log(response);
         TokenManager.setToken(response.data.token);
         this.props.onLogin();
         this.props.history.push('/');

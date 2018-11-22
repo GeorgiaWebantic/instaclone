@@ -8,6 +8,7 @@ const TopNav = ({ user, isLoggedIn, onLogout }) => (
     {
       isLoggedIn && (
       <div className="logout">
+        <img className="avatar" src={user.avatar} />
         <span>{user.firstName} {user.lastName}</span>
         <button onClick={onLogout}>Logout</button>
       </div>
