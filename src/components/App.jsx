@@ -8,6 +8,7 @@ import TokenManager from '../utils/token-manager';
 import Home from '../components/Home';
 import AuthRoute from '../components/AuthRoute';
 import BottomNav from '../components/BottomNav';
+import Profile from '../components/Profile';
 
 class App extends React.Component {
   constructor() {
@@ -56,6 +57,13 @@ class App extends React.Component {
             exact
             path="/sign-up"
             component={SignUp}
+          />
+          <Route
+            exact
+            path="/profile-page"
+            render={props => (
+              <Profile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
+            )}
           />
         </Switch>
         <BottomNav
