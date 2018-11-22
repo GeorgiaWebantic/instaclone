@@ -19,7 +19,7 @@ class SignUp extends React.Component {
   };
 
   handleLogin = () => {
-    axios.post('http://mcr-codes-image-sharing-api.herokuapp.com/users', {
+    axios.post('https://mcr-codes-image-sharing-api.herokuapp.com/users', {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,

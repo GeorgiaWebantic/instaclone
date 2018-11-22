@@ -1,8 +1,7 @@
 .post-card{
-    max-width: 400px;
-    width: 32%;
     margin: 0 0 1em;
     border: 1px solid #b7b5b5;
+    min-width: 300px;
     @media(max-width: 768px){
         width: 49%;
     }
@@ -27,8 +26,19 @@
         margin-right: 0.5em;
     }
 
+    & .username{
+        display: inline-block;
+        margin-right: .4em;
+        font-weight: 600;
+    }
+
     & .image{
         display: flex;
+        width: 100%;
+        height: 20em;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     & .image img{
@@ -56,6 +66,17 @@
     & .fa-comment{
         &:hover{
             cursor: pointer;
+        }
+    }
+
+    & .comments, .caption-image{
+        font-size: .9em;
+        margin: 1em;
+        max-width: 300px;
+
+        & .name{
+            font-weight: 700;
+            margin-right: .5em;
         }
     }
 

@@ -6,7 +6,7 @@ import TopNav from '../components/TopNav';
 import SignUp from '../components/SignUp';
 import TokenManager from '../utils/token-manager';
 import Home from '../components/Home';
-import AuthRoute from '../components/AuthRoute';
+import AddPost from '../components/AddPost';
 import BottomNav from '../components/BottomNav';
 import Profile from '../components/Profile';
 
@@ -45,6 +45,7 @@ class App extends React.Component {
             exact
             path="/"
             component={Home}
+            user={this.state.user}
           />
           <Route
             exact
@@ -60,11 +61,16 @@ class App extends React.Component {
           />
           <Route
             exact
+            path="/add-post"
+            component={AddPost}
+          />
+          <Route
+            exact
             path="/profile-page"
             render={props => (
               <Profile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
             )}
-          />
+           />
         </Switch>
         <BottomNav
           isLoggedIn={this.isLoggedIn()}
