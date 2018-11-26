@@ -43,6 +43,7 @@ class Profile extends React.Component {
         <h4>{this.state.firstName} {this.state.lastName}</h4>
         <h5>{this.state.bio}</h5>
         <h5>Posts: {this.state.usersPosts}</h5>
+        <Link to="/edit-profile" className="editProfileButton">Edit Profile</Link>
         <div className="personalPost">
           {this.state.images.map((post) => {
             return (
@@ -53,7 +54,6 @@ class Profile extends React.Component {
             );
           })}
         </div>
-        <Link to="/edit-profile" className="editProfileButton">Edit Profile</Link>
       </div>
     );
   }
