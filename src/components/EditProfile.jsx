@@ -15,11 +15,12 @@ class EditProfile extends React.Component {
         alertMessage: '',
         isSuccess: false,
         isError: false,
+        bio: '',
       },
-    ],
-    error: '',
-    file: null,
-    }
+      ],
+      error: '',
+      file: null,
+    };
   }
 
   handleImageChange = (event) => {
@@ -56,6 +57,7 @@ class EditProfile extends React.Component {
       formData.append('avatar', this.state.file);
       formData.append('firstName', this.state.user.firstName);
       formData.append('lastName', this.state.user.lastName);
+      formData.append('bio', this.state.user.bio);
 
       axios.patch(
         'https://mcr-codes-image-sharing-api.herokuapp.com/me',
@@ -67,35 +69,35 @@ class EditProfile extends React.Component {
           },
         }
       )
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          user: {
-            firstName: response.data.firstName,
-            lastName: response.data.lastName,
-            avatar: response.data.avatar
-          },
-          isSuccess: true,
-          alertMessage: 'Profile updated',
+        .then((response) => {
+          console.log(response);
+          this.setState({
+            user: {
+              firstName: response.data.firstName,
+              lastName: response.data.lastName,
+              avatar: response.data.avatar,
+              bio: response.data.bio,
+            },
+            isSuccess: true,
+            alertMessage: 'Profile updated',
+          });
+        })
+        .catch(() => {
+          this.setState({
+            isError: true,
+            alertMessage: 'Profile not updated. Please try again later.',
+          });
         });
-      })
-      .catch(() => {
-        this.setState({
-          isError: true,
-          alertMessage: 'Profile not updated. Please try again later.',
-        });
-      })
-    }
-    else {
+    } else {
       this.setState({
         error: 'The form is invalid',
       });
     }
-};
+  };
 
-validate() {
-  return this.state.user.firstName.length > 0;
-}
+  validate() {
+    return this.state.user.firstName.length > 0;
+  }
 
 
   render() {
@@ -141,6 +143,17 @@ validate() {
                 type="text"
                 name="lastName"
                 value={this.state.user.lastName}
+                onChange={this.handleTextChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Bio:
+              <textarea
+                type="text"
+                name="bio"
+                value={this.state.user.bio}
                 onChange={this.handleTextChange}
               />
             </label>

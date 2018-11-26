@@ -27,6 +27,7 @@ class Profile extends React.Component {
           lastName: response.data.lastName,
           avatar: response.data.avatar,
           images: response.data.images,
+          bio: response.data.bio
         });
         console.log(this.state.images)
       }).catch((error) => {
@@ -40,18 +41,17 @@ class Profile extends React.Component {
         <h1 className="profileName">{this.state.firstName} {this.state.lastName}'s Profile</h1>
         <div className="profilePictureA" style={{ backgroundImage: `url(${this.state.avatar})` }} />
         <h4>{this.state.firstName} {this.state.lastName}</h4>
-        <h5>Here there is meant to be a bio. Michael Will add it to the API</h5>
+        <h5>{this.state.bio}</h5>
         <h5>Posts: {this.state.usersPosts}</h5>
         <div className="personalPost">
-        {this.state.images.map((post) => {
-          console.log("this is post",post);
-          return (
-            <UserPosts
-              key={post._id}
-              src={post.src}
-            />
-          );
-        })}
+          {this.state.images.map((post) => {
+            return (
+              <UserPosts
+                key={post._id}
+                src={post.src}
+              />
+            );
+          })}
         </div>
         <Link to="/edit-profile" className="editProfileButton">Edit Profile</Link>
       </div>
