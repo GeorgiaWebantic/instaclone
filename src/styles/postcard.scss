@@ -1,4 +1,7 @@
-.post-card{
+.personalPost {
+  display: flex;
+  flex-direction: row;
+  .post-card{
     margin: 0 0 1em;
     border: 1px solid #b7b5b5;
     min-width: 300px;
@@ -80,5 +83,5 @@
             margin-right: .5em;
         }
     }
-
+}
 }
