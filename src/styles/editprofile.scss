@@ -1,0 +1,50 @@
+.update-button {
+    background: #5f9ea0;
+    padding: 1.1em 4.1em;
+    border-radius: 2em;
+    color: white;
+    font-size: .8em;
+    max-width: 20em;
+    margin: 2em 0;
+    font-weight: 700;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+        background-color: white;
+        color: #488b8f;
+        border: 0.2em solid #488b8f;
+    }
+}
+
+.edit-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    > h2{
+        color: #488b8f;
+        font-family: Lobster;
+        font-size: 2.5em;
+        letter-spacing: .05em;
+    }
+
+    > form .input {
+        margin: 1em;
+        > label {
+            color: #488b8f;
+            font-size: 1.1em;
+            > input {
+                border-radius: 1em;
+                border: 1px solid #545454;
+                margin-left: 1em;
+                padding: 0.3em 0;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}

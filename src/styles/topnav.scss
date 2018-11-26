@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
+
+
 }
 .logoTitle{
 font-size: 20px;
@@ -41,9 +41,11 @@ color: #488b8f
 .logout{
   position: absolute;
   right: 0;
+  display: flex;
+  align-items: center;
 }
 
-@media(max-width: 550px){
+@media(max-width: 768px){
   .topNav{
     flex-direction: column;
   }
@@ -53,8 +55,20 @@ color: #488b8f
 }
 
 .avatar {
-  width: 1.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 100%;
   margin-right: 1em;
   display: inline-block;
+}
+
+.logout-button {
+    background: #5f9ea0;
+    padding: 0.5em 1.2em;
+    border-radius: 2em;
+    color: white;
+    font-size: .8em;
+    max-width: 14em;
+    font-weight: 700;
+    margin: 0 1em;
 }

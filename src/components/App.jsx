@@ -9,6 +9,7 @@ import Home from '../components/Home';
 import AddPost from '../components/AddPost';
 import BottomNav from '../components/BottomNav';
 import Profile from '../components/Profile';
+import EditProfile from '../components/EditProfile';
 
 class App extends React.Component {
   constructor() {
@@ -71,6 +72,13 @@ class App extends React.Component {
               <Profile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
             )}
            />
+           <Route
+             exact
+             path="/edit-profile"
+             render={props => (
+               <EditProfile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
+             )}
+            />
         </Switch>
         <BottomNav
           isLoggedIn={this.isLoggedIn()}
