@@ -11,22 +11,25 @@ class Profile extends React.Component {
       firstName: '',
       lastName: '',
       avatar: '',
+      images: [],
     };
   }
 
   componentDidMount() {
     axios.get(`https://mcr-codes-image-sharing-api.herokuapp.com/users/${this.props.user._id}`)
-    .then((response) => {
-      console.log(response);
-      this.setState({
-        usersPosts: response.data.images.length,
-        firstName: response.data.firstName,
-        lastName: response.data.lastName,
-        avatar: response.data.avatar,
+      .then((response) => {
+        console.log("THIS IS WHAT I WANT",response);
+        this.setState({
+          usersPosts: response.data.images.length,
+          firstName: response.data.firstName,
+          lastName: response.data.lastName,
+          avatar: response.data.avatar,
+          images: response.data.images,
+        });
+        console.log(this.state.images)
+      }).catch((error) => {
+        console.log(error);
       });
-    }).catch((error) => {
-      console.log(error);
-    });
   }
 
   render() {
@@ -37,6 +40,7 @@ class Profile extends React.Component {
         <h4>{this.state.firstName} {this.state.lastName}</h4>
         <h5>Here there is meant to be a bio. Michael Will add it to the API</h5>
         <h5>Posts: {this.state.usersPosts}</h5>
+        <img src={this.state.images.src} key={this.state.images.user} />
         <Link to="/edit-profile" className="editProfileButton">Edit Profile</Link>
       </div>
     );
