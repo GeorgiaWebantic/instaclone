@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import CommentCard from '../components/CommentCard';
+import '../styles/comments.scss';
 
 class Comments extends React.Component {
   constructor(props) {
