@@ -18,8 +18,8 @@ class PostCard extends React.Component {
   event.preventDefault();
 
   this.setState({
-    isLiked: true,
-    likes: 1,
+      isLiked: this.state.likes >= 1,
+      likes: this.state.likes,
   });
 
   const formData = new FormData();
@@ -36,7 +36,6 @@ class PostCard extends React.Component {
     }
   )
   .then((response) => {
-    console.log(response);
     this.setState({
       isLiked: response.data.isLiked,
       likes: response.data.likes,
@@ -45,7 +44,6 @@ class PostCard extends React.Component {
 }
 
   render() {
-    console.log(this.state);
     const props = this.props;
     return (
       <div className="post-card">

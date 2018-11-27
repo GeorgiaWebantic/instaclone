@@ -37,7 +37,7 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         {this.state.posts.map((post) => {
-          // console.log(post);
+          console.log(post);
           return (
             <PostCard
               key={post._id}
