@@ -14,6 +14,9 @@ class Home extends React.Component {
         src: '',
         comments: '',
         caption: '',
+        likes: 0,
+        isLiked: false,
+        _id: '',
       }],
       userID: null,
       user: TokenManager.isTokenValid() ? TokenManager.getTokenPayload() : null,
@@ -24,7 +27,6 @@ class Home extends React.Component {
   componentDidMount() {
     axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.posts)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           posts: response.data,
         });
@@ -32,7 +34,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.state.user);
     return (
       <div className="home-container">
         {this.state.posts.map((post) => {
@@ -40,11 +41,14 @@ class Home extends React.Component {
           return (
             <PostCard
               key={post._id}
+              id={post._id}
               user={this.state.user}
               src={post.src}
               comments={post.comments}
               caption={post.caption}
               userID={this.state.userID}
+              likes={post.likes}
+              isLiked={post.isLiked}
             />
           );
         })}
