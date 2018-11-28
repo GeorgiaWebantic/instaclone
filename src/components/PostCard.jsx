@@ -9,26 +9,19 @@ class PostCard extends React.Component {
     super(props);
 
     this.state = {
-      isLiked: false,
-      likes: 0,
-    }
+      fields: {
+        likes: props.likes,
+        isLiked: props.isLiked,
+      },
+    };
   }
 
   handleLike = (event) => {
   event.preventDefault();
 
-  this.setState({
-      isLiked: this.state.likes >= 1,
-      likes: this.state.likes,
-  });
-
-  const formData = new FormData();
-  formData.append('likes', this.state.likes);
-  formData.append('isLiked', this.state.isLiked);
-
   axios.patch(
-    `https://mcr-codes-image-sharing-api.herokuapp.com/images/${this.props.id}/likes`,
-    formData,
+    `http://mcr-codes-image-sharing-api.herokuapp.com/images/${this.props.id}/likes/`,
+    this.state.fields,
     {
       headers: {
         Authorization: TokenManager.getToken(),
@@ -36,11 +29,13 @@ class PostCard extends React.Component {
     }
   )
   .then((response) => {
+    console.log(response);
     this.setState({
-      isLiked: response.data.isLiked,
       likes: response.data.likes,
-    })
-  })
+      isLiked: response.data.isLiked,
+      fields: response.data
+    });
+  });
 }
 
   render() {
@@ -56,11 +51,11 @@ class PostCard extends React.Component {
         <div className="image" style={{ backgroundImage: `url(${props.src})` }} />
         <div className="bottom-bar">
           <div className="like">
-            {(this.state.likes >= 1) ? <i onClick={this.handleLike} className="fas fa-heart" /> : <i onClick={this.handleLike} className="far fa-heart" />}
+            {(this.state.fields.isLiked === true) ? <i onClick={this.handleLike} className="fas fa-heart" /> : <i onClick={this.handleLike} className="far fa-heart" />}
           </div>
           <i className="far fa-comment" />
         </div>
-        <div className="likes">{this.state.likes} Likes</div>
+        <div className="likes">{this.state.fields.likes} Likes</div>
         <div className="caption-image">
           <div className="username">
             <span>{props.user.firstName}</span> <span>{props.user.lastName}</span>

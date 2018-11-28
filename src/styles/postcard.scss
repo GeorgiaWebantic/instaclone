@@ -22,6 +22,7 @@
        display: flex;
        align-items: center;
        padding: 0.5em;
+       position: relative;
     }
     & .top-bar img{
         width: 2em;
@@ -47,6 +48,11 @@
 
     & .image img{
         max-width: 100%;
+    }
+
+    & .delete{
+      position: absolute;
+      right: 1em;
     }
 
     & .bottom-bar {
@@ -87,7 +93,7 @@
 
     & .comments, .caption-image{
         font-size: .9em;
-        max-width: 300px;
+        max-width: 400px;
         padding: 1em;
         background: white;
 
