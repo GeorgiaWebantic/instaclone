@@ -17,18 +17,17 @@ class Home extends React.Component {
         comments: [],
         caption: '',
         _id: '',
-      }],
+      },
         likes: 0,
         isLiked: true,
-      },
-      userID: null,
-      user: TokenManager.isTokenValid() ? TokenManager.getTokenPayload() : null,
+        userID: null,
+        user: TokenManager.isTokenValid() ? TokenManager.getTokenPayload() : null,
+    }
     };
-  }
 
 
   componentDidMount() {
-    axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.fields)
+    axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.images)
       .then((response) => {
         this.setState({
           images: response.data
@@ -40,13 +39,12 @@ class Home extends React.Component {
     return (
       <div className="home-container">
         {this.state.images.map(image => {
-          console.log(image);
           return (
               <PostCard
                 key={image._id}
                 id={image._id}
-                imageID={post._id}
-                user={this.state.user}
+                imageID={image._id}
+                user={image.user}
                 src={image.src}
                 comments={image.comments}
                 caption={image.caption}
