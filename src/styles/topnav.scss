@@ -7,14 +7,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
+    a.logo{
+      text-decoration:none;
+    }
 .logoTitle{
 font-size: 20px;
 font-family: Lobster;
 letter-spacing: 2.5px;
-color: #488b8f
+color: #488b8f;
 }
 
 .login-button{

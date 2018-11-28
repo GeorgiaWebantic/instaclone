@@ -16,6 +16,8 @@ class Home extends React.Component {
         tags: [],
         comments: [],
         caption: '',
+        _id: '',
+      }],
         likes: 0,
         isLiked: true,
       },
@@ -43,6 +45,7 @@ class Home extends React.Component {
               <PostCard
                 key={image._id}
                 id={image._id}
+                imageID={post._id}
                 user={this.state.user}
                 src={image.src}
                 comments={image.comments}

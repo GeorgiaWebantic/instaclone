@@ -42,7 +42,7 @@ class PostCard extends React.Component {
     const props = this.props;
     return (
       <div className="post-card">
-        <Link to="#" className="top-bar">
+        <Link to={`/profile/${props.user._id}`} className="top-bar">
           <img src={props.user.avatar} />
           <div>
             <span>{props.user.firstName}</span> <span>{props.user.lastName}</span>
@@ -53,7 +53,7 @@ class PostCard extends React.Component {
           <div className="like">
             {(this.state.fields.isLiked === true) ? <i onClick={this.handleLike} className="fas fa-heart" /> : <i onClick={this.handleLike} className="far fa-heart" />}
           </div>
-          <i className="far fa-comment" />
+          <Link to={`/comments/${props.imageID}`}><i className="far fa-comment" /></Link>
         </div>
         <div className="likes">{this.state.fields.likes} Likes</div>
         <div className="caption-image">
