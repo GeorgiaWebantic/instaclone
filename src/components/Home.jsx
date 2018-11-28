@@ -9,15 +9,16 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      posts: [{
+      images: [],
+      fields: {
         user: '',
         src: '',
-        comments: '',
+        tags: [],
+        comments: [],
         caption: '',
         likes: 0,
-        isLiked: false,
-        _id: '',
-      }],
+        isLiked: true,
+      },
       userID: null,
       user: TokenManager.isTokenValid() ? TokenManager.getTokenPayload() : null,
     };
@@ -25,10 +26,10 @@ class Home extends React.Component {
 
 
   componentDidMount() {
-    axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.posts)
+    axios.get('https://mcr-codes-image-sharing-api.herokuapp.com/images', this.state.fields)
       .then((response) => {
         this.setState({
-          posts: response.data,
+          images: response.data
         });
       });
   }
@@ -36,20 +37,20 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-        {this.state.posts.map((post) => {
-          console.log(post);
+        {this.state.images.map(image => {
+          console.log(image);
           return (
-            <PostCard
-              key={post._id}
-              id={post._id}
-              user={this.state.user}
-              src={post.src}
-              comments={post.comments}
-              caption={post.caption}
-              userID={this.state.userID}
-              likes={post.likes}
-              isLiked={post.isLiked}
-            />
+              <PostCard
+                key={image._id}
+                id={image._id}
+                user={this.state.user}
+                src={image.src}
+                comments={image.comments}
+                caption={image.caption}
+                userID={this.state.userID}
+                likes={image.likes}
+                isLiked={image.isLiked}
+              />
           );
         })}
       </div>
