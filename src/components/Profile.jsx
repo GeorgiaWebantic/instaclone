@@ -20,14 +20,13 @@ class Profile extends React.Component {
   componentDidMount() {
     axios.get(`https://mcr-codes-image-sharing-api.herokuapp.com/users/${this.props.user._id}`)
       .then((response) => {
-        console.log("THIS IS WHAT I WANT",response);
         this.setState({
           usersPosts: response.data.images.length,
           firstName: response.data.firstName,
           lastName: response.data.lastName,
           avatar: response.data.avatar,
           images: response.data.images,
-          bio: response.data.bio
+          bio: response.data.bio,
         });
         console.log(this.state.images)
       }).catch((error) => {
