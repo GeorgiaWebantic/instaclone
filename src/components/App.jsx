@@ -11,7 +11,9 @@ import BottomNav from '../components/BottomNav';
 import Profile from '../components/Profile';
 import EditProfile from '../components/EditProfile';
 import Comments from '../components/Comments';
+import OtherProfile from '../components/OtherProfile';
 import Search from '../components/SearchPage';
+
 
 class App extends React.Component {
   constructor() {
@@ -91,6 +93,14 @@ class App extends React.Component {
             render={props => (
               <Comments {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
             )}
+            />
+          <Route 
+            path="/profile"
+            render={props => (
+              <OtherProfile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
+            )}
+          />
+            />
           />
         </Switch>
         <BottomNav
