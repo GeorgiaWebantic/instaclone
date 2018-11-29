@@ -12,6 +12,7 @@ class PostCard extends React.Component {
       fields: {
         likes: props.likes,
         isLiked: props.isLiked,
+        comments: props.comments,
       },
     };
   }
@@ -33,6 +34,7 @@ class PostCard extends React.Component {
     this.setState({
       likes: response.data.likes,
       isLiked: response.data.isLiked,
+      comments: response.data.comments,
       fields: response.data
     });
   });
@@ -53,9 +55,12 @@ class PostCard extends React.Component {
           <div className="like">
             {(this.state.fields.isLiked === true) ? <i onClick={this.handleLike} className="fas fa-heart" /> : <i onClick={this.handleLike} className="far fa-heart" />}
           </div>
-          <Link to={`/comments/${props.imageID}`}><i className="far fa-comment" /></Link>
+          <div className="comment">
+            {(this.state.fields.comments >= [0]) ? <Link to={`/comments/${props.imageID}`}><i className="fas fa-comment" /></Link> : <Link to={`/comments/${props.imageID}`}><i className="far fa-comment" /></Link>}
+          </div>
         </div>
         <div className="likes">{this.state.fields.likes} Likes</div>
+        <div className="comments-count">{this.state.fields.comments.length} Comments</div>
         <div className="caption-image">
           <div className="username">
             <span>{props.user.firstName}</span> <span>{props.user.lastName}</span>

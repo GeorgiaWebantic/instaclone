@@ -1,11 +1,16 @@
 import React from 'react';
 import '../styles/commentCard.scss';
+import moment from 'moment';
 
 const CommentCard = (props) => (
   <div className="commentCard">
-    <img className="commentImg" src={props.commentData.author.avatar} />
-    <h1 className="commentItem">{props.commentData.author.firstName}</h1>
-    <h1 className="commentItem">{props.commentData.author.lastName}</h1>
+    <span className="imageandname">
+      <div className="commentImg" style={{ backgroundImage: `url(${props.commentData.author.avatar})` }} />
+      <span>
+        <h1 className="commentItem">{props.commentData.author.firstName}</h1>
+        <h1 className="commentItem">{props.commentData.author.lastName}</h1>
+      </span>
+    </span>
     <h1 className="commentItem2">{props.commentData.content}</h1>
   </div>
 );

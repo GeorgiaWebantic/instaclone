@@ -10,13 +10,23 @@ input[type="file"] {
 }
 .input-image {
     cursor: pointer;
-    background: #5f9ea0;
+    background: #488b8f;
     padding: 1.2em 3.9em;
     border-radius: 2em;
     color: white;
     font-size: .8em;
     display: inline-block;
     margin-top: 1em;
+    border: 0.2em solid #488b8f;
+    &:hover{
+      background-color: white;
+      border: 0.2em solid #488b8f;
+      color: #488b8f;
+      cursor: pointer;
+    }
+    &:focus{
+      outline: none;
+    }
 }
 
 .image-preview{
@@ -27,21 +37,23 @@ input[type="file"] {
 }
 
 .add-button {
-    background: #5f9ea0;
+    background: #488b8f;
     padding: 0.9em 4.9em;
     border-radius: 2em;
     color: white;
     font-size: .8em;
     max-width: 14em;
     font-weight: 700;
-}
-
-.add-button:focus{
-    outline:none;
-}
-
-.add-button:hover{
-    cursor: pointer;
+    border: 0.2em solid #488b8f;
+    &:hover{
+      background-color: white;
+      border: 0.2em solid #488b8f;
+      color: #488b8f;
+      cursor: pointer;
+    }
+    &:focus{
+      outline: none;
+    }
 }
 
 .alert.alert.error{

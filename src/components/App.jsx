@@ -45,7 +45,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/home"
             component={Home}
             user={this.state.user}
           />
