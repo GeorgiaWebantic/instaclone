@@ -51,6 +51,7 @@ class Profile extends React.Component {
                     key={post._id}
                     src={post.src}
                     id={post._id}
+                    caption={post.caption}
                   />
                 );
               })}

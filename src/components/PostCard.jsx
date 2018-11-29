@@ -13,6 +13,7 @@ class PostCard extends React.Component {
         likes: props.likes,
         isLiked: props.isLiked,
         comments: props.comments,
+        tags: props.tags,
       },
     };
   }
@@ -35,12 +36,14 @@ class PostCard extends React.Component {
       likes: response.data.likes,
       isLiked: response.data.isLiked,
       comments: response.data.comments,
+      tags: response.data.tags,
       fields: response.data
     });
   });
 }
 
   render() {
+    console.log(this.props);
     const props = this.props;
     return (
       <div className="post-card">
@@ -66,6 +69,9 @@ class PostCard extends React.Component {
             <span>{props.user.firstName}</span> <span>{props.user.lastName}</span>
           </div>
           <span className="text">{props.caption}</span>
+        </div>
+        <div className="post-tags">
+          <Link to={`/search/${props.tags}`} className="text">{props.tags}</Link>
         </div>
       </div>
     );
