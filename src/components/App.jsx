@@ -11,6 +11,7 @@ import BottomNav from '../components/BottomNav';
 import Profile from '../components/Profile';
 import EditProfile from '../components/EditProfile';
 import Comments from '../components/Comments';
+import Search from '../components/SearchPage';
 
 class App extends React.Component {
   constructor() {
@@ -60,6 +61,11 @@ class App extends React.Component {
             exact
             path="/sign-up"
             component={SignUp}
+          />
+          <Route
+            exact
+            path="/search"
+            component={Search}
           />
           <Route
             exact
