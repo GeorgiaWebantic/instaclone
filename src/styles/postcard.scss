@@ -118,8 +118,15 @@
 .personalPost{
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
   @media(max-width: 660px){
     flex-direction: column;
   }
+}
+
+.post-tags{
+    font-size: .9em;
+    max-width: 400px;
+    padding: 1em;
 }

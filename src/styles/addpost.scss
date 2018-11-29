@@ -85,7 +85,7 @@ input[type="file"] {
     font-size: 0.9em;
 }
 
-.caption{
+.caption, .tags{
     padding: 1em;
     border: 1px solid #5f5f5f;
     border-radius: 0.6em;
@@ -98,4 +98,10 @@ input[type="file"] {
 
 .add-post{
   margin-bottom: 7em;
+}
+
+label{
+  color: #488b8f;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
 }

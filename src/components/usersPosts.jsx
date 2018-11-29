@@ -37,6 +37,7 @@ class UserPosts extends React.Component {
           <i className="fas fa-trash"></i>
         </div>
         <div className="image" style={{ backgroundImage: `url(${props.src})` }} />
+        <div className="title">{props.caption}</div>
       </div>
     );
   }
