@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const TopNav = ({ user, isLoggedIn, onLogout }) => (
   <div className="topNav">
-    <Link to='/' className="logo">
+    <Link to='/home' className="logo">
       <h1 className="logoTitle">Instaclone</h1>
     </Link>
     {
