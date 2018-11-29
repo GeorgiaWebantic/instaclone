@@ -90,7 +90,7 @@ class AddPost extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="add-post">
         <div className="alert alert.success">
           {
               this.state.isSuccess &&

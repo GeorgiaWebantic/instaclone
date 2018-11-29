@@ -14,6 +14,7 @@ class Profile extends React.Component {
       lastName: '',
       avatar: '',
       images: [],
+      _id: '',
     };
   }
 
@@ -49,6 +50,7 @@ class Profile extends React.Component {
                   <UserPosts
                     key={post._id}
                     src={post.src}
+                    id={post._id}
                   />
                 );
               })}
