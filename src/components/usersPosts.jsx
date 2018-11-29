@@ -32,7 +32,7 @@ class UserPosts extends React.Component {
   render() {
     const props = this.props;
     return (
-      <div className="post-card" style={{margin: "0 1em"}}>
+      <div className="post-card" style={{margin: "1em"}}>
         <div onClick={this.handleDelete} className="delete">
           <i className="fas fa-trash"></i>
         </div>
