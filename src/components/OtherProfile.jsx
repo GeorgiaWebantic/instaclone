@@ -37,6 +37,7 @@ class OtherProfile extends React.Component {
               <UserPosts
                 key={info._id}
                 src={info.src}
+                caption={info.caption}
               />
             );
           })}
