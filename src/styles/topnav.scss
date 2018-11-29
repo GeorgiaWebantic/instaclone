@@ -33,6 +33,7 @@ color: #488b8f;
     background-color: white;
     border: 0.2em solid #488b8f;
     color: #488b8f;
+    cursor: pointer;
   }
   &:focus{
     outline: none;
@@ -63,13 +64,22 @@ color: #488b8f;
   display: inline-block;
 }
 
-.logout-button {
-    background: #5f9ea0;
-    padding: 0.5em 1.2em;
-    border-radius: 2em;
-    color: white;
-    font-size: .8em;
-    max-width: 14em;
-    font-weight: 700;
-    margin: 0 1em;
+.logout-button{
+  margin: 0 1em;
+  text-decoration: none;
+  color: white;
+  background-color: #488b8f;
+  padding: 0.4em 2em;
+  border-radius: 2em;
+  border: 0.2em solid #488b8f;
+  transition: background-color 0.3s ease;
+  &:hover{
+    background-color: white;
+    border: 0.2em solid #488b8f;
+    color: #488b8f;
+    cursor: pointer;
+  }
+  &:focus{
+    outline: none;
+  }
 }

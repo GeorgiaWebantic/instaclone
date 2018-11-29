@@ -57,16 +57,19 @@ class Comments extends React.Component {
             />
           );
         })}
-        <label>
-          Add a comment...
-          <textarea
-            value={this.state.commentToAdd}
-            type="text"
-            onChange={this.handleInputChange}
-            name="commentToAdd"
-          />
-        </label>
-        <button onClick={this.addComment}>Add Comment!</button>
+        <span>
+          <label className="label">
+            <span className="marginBottom">Add a comment...</span>
+            <textarea
+              value={this.state.commentToAdd}
+              type="text"
+              onChange={this.handleInputChange}
+              name="commentToAdd"
+              className="addtextarea"
+            />
+          </label>
+          <button onClick={this.addComment} className="addComment" >Add Comment!</button>
+          </span>
       </div>
     );
   }

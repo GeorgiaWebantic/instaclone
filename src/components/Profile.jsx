@@ -37,22 +37,23 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="profilePage">
-        <h1 className="profileName">{this.state.firstName} {this.state.lastName}'s Profile</h1>
         <div className="profilePictureA" style={{ backgroundImage: `url(${this.state.avatar})` }} />
         <h4>{this.state.firstName} {this.state.lastName}</h4>
-        <h5>{this.state.bio}</h5>
+        <div className="bio">{this.state.bio}</div>
         <h5>Posts: {this.state.usersPosts}</h5>
         <Link to="/edit-profile" className="editProfileButton">Edit Profile</Link>
-        <div className="personalPost">
-          {this.state.images.map((post) => {
-            return (
-              <UserPosts
-                key={post._id}
-                src={post.src}
-              />
-            );
-          })}
-        </div>
+        <div className="posts-container">
+            <div className="personalPost">
+              {this.state.images.map((post) => {
+                return (
+                  <UserPosts
+                    key={post._id}
+                    src={post.src}
+                  />
+                );
+              })}
+            </div>
+          </div>
       </div>
     );
   }

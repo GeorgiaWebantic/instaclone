@@ -16,9 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
 }
 .editProfileButton {
-    background: #5f9ea0;
+    background: #488b8f;
     padding: 0.9em 3.9em;
     border-radius: 2em;
     color: white;
@@ -26,6 +27,16 @@
     max-width: 14em;
     font-weight: 700;
     text-decoration: none;
+    border: 0.2em solid #488b8f;
+    &:hover{
+      background-color: white;
+      border: 0.2em solid #488b8f;
+      color: #488b8f;
+      cursor: pointer;
+    }
+    &:focus{
+      outline: none;
+    }
 }
 
 .editProfileButton:focus{
@@ -34,4 +45,17 @@
 
 .editProfileButton:hover{
     cursor: pointer;
+}
+
+.posts-container {
+    background: white;
+    width: 100%;
+    margin-top: 2em;
+    height: 100%;
+    padding: 1em;
+    border-top: 1px solid #b7b5b5;
+}
+
+.bio{
+  margin: 0;
 }
