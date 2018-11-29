@@ -34,7 +34,7 @@ class Comments extends React.Component {
     axios.post(
       `https://mcr-codes-image-sharing-api.herokuapp.com/images/${this.state.imageID}/comments`, {
 
-        content:this.state.commentToAdd,
+        content: this.state.commentToAdd,
       },
       {
         headers: {
@@ -58,6 +58,10 @@ class Comments extends React.Component {
             />
           );
         })}
+        {
+          this.state.commentData.length === 0 &&
+          <h1 className="noComments"><i className="far fa-frown" /> Sorry No Comments <i className="far fa-frown" /></h1>
+        }
         <span>
           <label className="label">
             <span className="marginBottom">Add a comment...</span>
@@ -69,8 +73,8 @@ class Comments extends React.Component {
               className="addtextarea"
             />
           </label>
-          <button onClick={this.addComment} className="addComment" >Add Comment!</button>
-          </span>
+          <button onClick={this.addComment} className="addComment">Add Comment!</button>
+        </span>
       </div>
     );
   }
