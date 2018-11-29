@@ -1,0 +1,20 @@
+.delete{
+  position: absolute;
+  background: white;
+  width: 100%;
+  text-align: right;
+}
+
+.post-card{
+  position: relative;
+}
+
+i.fas.fa-trash {
+    padding: .3em;
+    padding-right: 0.6em;
+    color: #488b8f;
+    &:hover{
+      cursor: pointer;
+      color: #b7b5b5;
+    }
+}
