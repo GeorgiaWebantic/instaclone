@@ -12,6 +12,7 @@ class AddPost extends React.Component {
       fields: [{
         src: '',
         caption: '',
+        tags: [],
         alertMessage: '',
         isSuccess: false,
         isError: false,
@@ -55,6 +56,7 @@ class AddPost extends React.Component {
       const formData = new FormData();
       formData.append('image', this.state.file);
       formData.append('caption', this.state.fields.caption);
+      formData.append('tags', this.state.fields.tags);
 
       axios.post(
         'https://mcr-codes-image-sharing-api.herokuapp.com/images',
@@ -90,7 +92,7 @@ class AddPost extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="add-post">
         <div className="alert alert.success">
           {
               this.state.isSuccess &&
@@ -112,11 +114,20 @@ class AddPost extends React.Component {
             <input name="src" type="file" onChange={this.imageChange} id="src" />
           </div>
           <img className="image-preview" src={this.state.src} />
+          <label htmlFor="tags">Caption:</label>
           <textarea
             name="caption"
             type="text"
             className="caption"
             value={this.state.fields.caption}
+            onChange={this.textChange}
+          />
+          <label htmlFor="tags">Tags:</label>
+          <textarea
+            name="tags"
+            type="text"
+            className="tags"
+            value={this.state.fields.tags}
             onChange={this.textChange}
           />
           <button className="add-button" type="submit">Post</button>

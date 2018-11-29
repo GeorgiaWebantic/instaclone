@@ -51,6 +51,7 @@ class Home extends React.Component {
                 userID={this.state.userID}
                 likes={image.likes}
                 isLiked={image.isLiked}
+                tags={image.tags}
               />
           );
         })}

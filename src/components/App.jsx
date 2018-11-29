@@ -12,6 +12,8 @@ import Profile from '../components/Profile';
 import EditProfile from '../components/EditProfile';
 import Comments from '../components/Comments';
 import OtherProfile from '../components/OtherProfile';
+import Search from '../components/SearchPage';
+
 
 class App extends React.Component {
   constructor() {
@@ -46,7 +48,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/home"
             component={Home}
             user={this.state.user}
           />
@@ -61,6 +63,11 @@ class App extends React.Component {
             exact
             path="/sign-up"
             component={SignUp}
+          />
+          <Route
+            exact
+            path="/search"
+            component={Search}
           />
           <Route
             exact

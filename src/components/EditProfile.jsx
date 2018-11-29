@@ -147,7 +147,7 @@ class EditProfile extends React.Component {
               />
             </label>
           </div>
-          <div>
+          <div className="input">
             <label>
               Bio:
               <textarea

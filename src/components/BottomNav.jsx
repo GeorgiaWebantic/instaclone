@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/bottomnav.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class BottomNav extends React.Component {
   constructor(props) {
@@ -11,11 +11,11 @@ class BottomNav extends React.Component {
     if (this.props.isLoggedIn === true) {
       return (
         <div className="BottomNav">
-          <Link className="bottomNavLink" to="/"><i className="fas fa-home fa-2x" /></Link>
-          <Link className="bottomNavLink" to="/search"><i className="fas fa-search fa-2x" /></Link>
-          <Link className="bottomNavLink" to="/add-post"><i className="far fa-plus-square fa-2x" /></Link>
-          <Link className="bottomNavLink" to="/liked"><i className="far fa-heart fa-2x" /></Link>
-          <Link className="bottomNavLink" to="profile-page"><i className="far fa-user fa-2x" /></Link>
+          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/home"><i className="fas fa-home fa-2x" /></NavLink>
+          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/search"><i className="fas fa-search fa-2x" /></NavLink>
+          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/add-post"><i className="far fa-plus-square fa-2x" /></NavLink>
+          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/liked"><i className="far fa-heart fa-2x" /></NavLink>
+          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/profile-page"><i className="far fa-user fa-2x" /></NavLink>
         </div>
       );
     }else {

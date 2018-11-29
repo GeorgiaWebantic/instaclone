@@ -5,6 +5,7 @@
     margin: 0 0 1em;
     border: 1px solid #b7b5b5;
     min-width: 300px;
+    max-width: 300px;
     @media(max-width: 768px){
         width: 49%;
     }
@@ -50,11 +51,6 @@
         max-width: 100%;
     }
 
-    & .delete{
-      position: absolute;
-      right: 1em;
-    }
-
     & .bottom-bar {
         background: #fff;
         padding: 0.5em;
@@ -70,7 +66,7 @@
       display: inline-block;
     }
 
-    & .likes{
+    & .likes, .comments-count{
       margin: .5em 1em;
     }
 
@@ -85,17 +81,23 @@
       color: red;
     }
 
+    & .fas.fa-comment{
+      color: #488b8f;
+    }
+
     & .fa-comment{
         &:hover{
             cursor: pointer;
+            color: #488b8f;
         }
     }
 
-    & .comments, .caption-image{
+    & .caption-image{
         font-size: .9em;
         max-width: 400px;
         padding: 1em;
         background: white;
+        min-height: 2.4em;
 
         @media(max-width: 490px){
           max-width: 490px;
@@ -107,4 +109,24 @@
         }
     }
 }
+}
+
+.comment{
+  display: inline-block;
+}
+
+.personalPost{
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media(max-width: 660px){
+    flex-direction: column;
+  }
+}
+
+.post-tags{
+    font-size: .9em;
+    max-width: 400px;
+    padding: 1em;
 }

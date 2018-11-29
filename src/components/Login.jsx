@@ -28,7 +28,7 @@ class Login extends React.Component {
         console.log(response);
         TokenManager.setToken(response.data.token);
         this.props.onLogin();
-        this.props.history.push('/');
+        this.props.history.push('/home');
       })
       .catch((error) => {
         this.setState({ errorMessage: error.response.data.message });
