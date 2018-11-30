@@ -12,6 +12,7 @@ import Profile from '../components/Profile';
 import EditProfile from '../components/EditProfile';
 import Comments from '../components/Comments';
 import Search from '../components/SearchPage';
+import EditPost from '../components/EditPost';
 
 class App extends React.Component {
   constructor() {
@@ -84,6 +85,12 @@ class App extends React.Component {
             path="/edit-profile"
             render={props => (
               <EditProfile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
+            )}
+          />
+          <Route
+            path="/edit-post"
+            render={props => (
+              <EditPost {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
             )}
           />
           <Route
