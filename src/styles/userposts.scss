@@ -11,8 +11,19 @@
 
 i.fas.fa-trash {
     padding: .3em;
-    padding-right: 0.6em;
+    padding-right: 2.5em;
     color: #488b8f;
+    &:hover{
+      cursor: pointer;
+      color: #b7b5b5;
+    }
+}
+
+i.fas.fa-ellipsis-h {
+    color: #488b8f;
+    position: absolute;
+    right: 0.6em;
+    top: 0.4em;
     &:hover{
       cursor: pointer;
       color: #b7b5b5;

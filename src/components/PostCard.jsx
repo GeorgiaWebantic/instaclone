@@ -71,7 +71,7 @@ class PostCard extends React.Component {
           <span className="text">{props.caption}</span>
         </div>
         <div className="post-tags">
-          <Link to={`/search/${props.tags}`} className="text">{props.tags}</Link>
+          <Link to="" className="text">{props.tags}</Link>
         </div>
       </div>
     );
