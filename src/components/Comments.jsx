@@ -55,6 +55,7 @@ class Comments extends React.Component {
             <CommentCard
               key={data._id}
               commentData={data}
+              imageID={this.state.imageID}
             />
           );
         })}
