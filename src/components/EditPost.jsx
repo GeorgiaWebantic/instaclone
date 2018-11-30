@@ -46,7 +46,10 @@ class EditPost extends React.Component {
 
       axios.patch(
         `http://mcr-codes-image-sharing-api.herokuapp.com/images/${this.state.imageID}`,
-        null,
+        {
+          'caption': this.state.image.caption,
+          'tags': this.state.image.tags,
+        },
         {
           headers: {
             Authorization: TokenManager.getToken(),
