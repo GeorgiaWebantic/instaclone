@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import OtherUsersPosts from '../components/OtherUsersPosts';
+import OtherUsersPosts from '../components/otherUsersPosts';
 import '../styles/profile.scss';
 
 class OtherProfile extends React.Component {
