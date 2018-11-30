@@ -27,6 +27,12 @@ class CommentCard extends React.Component {
     });
   };
 
+  showDelete() {
+    if (TokenManager.getTokenPayload()._id === this.props.commentData.author._id) {
+      return true;
+    }
+  }
+
   render() {
     return (
       <div className="commentCard">
@@ -38,9 +44,14 @@ class CommentCard extends React.Component {
           </span>
         </span>
         <h1 className="commentItem2">{this.props.commentData.content}</h1>
-        <div className="deleteComment" onClick={this.handleOnClick}>
-          <i className="fas fa-trash" />
-        </div>
+        {
+          this.showDelete() &&
+          (
+          <div className="deleteComment" onClick={this.handleOnClick}>
+            <i className="fas fa-trash" />
+          </div>
+          )
+        }
       </div>
     );
   }
