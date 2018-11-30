@@ -64,14 +64,14 @@ class PostCard extends React.Component {
         </div>
         <div className="likes">{this.state.fields.likes} Likes</div>
         <div className="comments-count">{this.state.fields.comments.length} Comments</div>
+        <div className="post-tags">
+          <Link to="" className="text">{props.tags}</Link>
+        </div>
         <div className="caption-image">
           <div className="username">
             <span>{props.user.firstName}</span> <span>{props.user.lastName}</span>
           </div>
           <span className="text">{props.caption}</span>
-        </div>
-        <div className="post-tags">
-          <Link to="" className="text">{props.tags}</Link>
         </div>
       </div>
     );
