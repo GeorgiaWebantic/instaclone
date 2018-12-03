@@ -12,9 +12,7 @@ import Profile from '../components/Profile';
 import EditProfile from '../components/EditProfile';
 import Comments from '../components/Comments';
 import OtherProfile from '../components/OtherProfile';
-import Search from '../components/SearchPage';
 import EditPost from '../components/EditPost';
-
 
 class App extends React.Component {
   constructor() {
@@ -67,11 +65,6 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/search"
-            component={Search}
-          />
-          <Route
-            exact
             path="/add-post"
             component={AddPost}
           />
@@ -101,7 +94,7 @@ class App extends React.Component {
               <Comments {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />
             )}
             />
-          <Route 
+          <Route
             path="/profile"
             render={props => (
               <OtherProfile {...props} user={this.state.user} isLoggedIn={this.isLoggedIn()} />

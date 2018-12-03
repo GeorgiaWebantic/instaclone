@@ -29,7 +29,6 @@ class Profile extends React.Component {
           images: response.data.images,
           bio: response.data.bio,
         });
-        console.log(this.state.images)
       }).catch((error) => {
         console.log(error);
       });

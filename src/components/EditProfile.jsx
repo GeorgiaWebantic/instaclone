@@ -70,7 +70,6 @@ class EditProfile extends React.Component {
         }
       )
         .then((response) => {
-          console.log(response);
           this.setState({
             user: {
               firstName: response.data.firstName,

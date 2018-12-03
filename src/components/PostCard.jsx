@@ -31,7 +31,6 @@ class PostCard extends React.Component {
     }
   )
   .then((response) => {
-    console.log(response);
     this.setState({
       likes: response.data.likes,
       isLiked: response.data.isLiked,
@@ -43,7 +42,6 @@ class PostCard extends React.Component {
 }
 
   render() {
-    console.log(this.props);
     const props = this.props;
     return (
       <div className="post-card">
@@ -65,7 +63,7 @@ class PostCard extends React.Component {
         <div className="likes">{this.state.fields.likes} Likes</div>
         <div className="comments-count">{this.state.fields.comments.length} Comments</div>
         <div className="post-tags">
-          <Link to="" className="text">{props.tags}</Link>
+          <div className="text">{props.tags}</div>
         </div>
         <div className="caption-image">
           <div className="username">
