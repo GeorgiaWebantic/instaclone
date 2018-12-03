@@ -12,9 +12,7 @@ class BottomNav extends React.Component {
       return (
         <div className="BottomNav">
           <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/home"><i className="fas fa-home fa-2x" /></NavLink>
-          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/search"><i className="fas fa-search fa-2x" /></NavLink>
           <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/add-post"><i className="far fa-plus-square fa-2x" /></NavLink>
-          <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/liked"><i className="far fa-heart fa-2x" /></NavLink>
           <NavLink className="bottomNavLink" activeStyle={{color: "#488b8f"}} to="/profile-page"><i className="far fa-user fa-2x" /></NavLink>
         </div>
       );

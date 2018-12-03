@@ -29,7 +29,6 @@ class Comments extends React.Component {
   };
 
   addComment = (event) => {
-    console.log(this.state.commentToAdd);
     event.preventDefault();
     axios.post(
       `https://mcr-codes-image-sharing-api.herokuapp.com/images/${this.state.imageID}/comments`, {
@@ -42,7 +41,6 @@ class Comments extends React.Component {
         },
       }
     ).then((response) => {
-      console.log(response.data);
       window.location.reload();
     });
   };

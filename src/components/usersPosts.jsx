@@ -9,7 +9,7 @@ class UserPosts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     };
   }
 
@@ -25,7 +25,6 @@ class UserPosts extends React.Component {
       }
     )
     .then((response) => {
-      console.log(response.data);
       window.location.reload();
     })
   }

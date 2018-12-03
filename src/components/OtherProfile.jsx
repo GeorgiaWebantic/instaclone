@@ -26,7 +26,6 @@ class OtherProfile extends React.Component {
   render() {
     return (
       <div className="profilePage">
-        {console.log(this.state.userInfo)}
         <div className="profilePictureA" style={{ backgroundImage: `url(${this.state.userInfo.avatar})` }} />
         <h4>{this.state.userInfo.firstName} {this.state.userInfo.lastName}</h4>
         <div className="bio">{this.state.userInfo.bio}</div>
