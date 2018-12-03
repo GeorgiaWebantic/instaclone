@@ -60,8 +60,8 @@ class PostCard extends React.Component {
             {(this.state.fields.comments >= [0]) ? <Link to={`/comments/${props.imageID}`}><i className="fas fa-comment" /></Link> : <Link to={`/comments/${props.imageID}`}><i className="far fa-comment" /></Link>}
           </div>
         </div>
-        <div className="likes">{this.state.fields.likes} Likes</div>
-        <div className="comments-count">{this.state.fields.comments.length} Comments</div>
+        <div className="likes">{this.state.fields.likes} <span className="weight">Likes</span></div>
+        <div className="comments-count">{this.state.fields.comments.length} <span className="weight">Comments</span></div>
         <div className="post-tags">
           <div className="text">{props.tags}</div>
         </div>
