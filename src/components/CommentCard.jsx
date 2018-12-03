@@ -43,15 +43,17 @@ class CommentCard extends React.Component {
             <h1 className="commentItem">{this.props.commentData.author.lastName}</h1>
           </span>
         </span>
-        <h1 className="commentItem2">{this.props.commentData.content}</h1>
-        {
-          this.showDelete() &&
-          (
-          <div className="deleteComment" onClick={this.handleOnClick}>
-            <i className="fas fa-trash" />
-          </div>
-          )
-        }
+        <div className="commentanddelete">
+          <h1 className="commentItem2">{this.props.commentData.content}</h1>
+          {
+            this.showDelete() &&
+            (
+            <div className="deleteComment" onClick={this.handleOnClick}>
+              <i className="fas fa-trash" />
+            </div>
+            )
+          }
+        </div>
       </div>
     );
   }

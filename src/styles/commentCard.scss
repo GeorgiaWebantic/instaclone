@@ -31,3 +31,13 @@
   align-items: center;
   border-bottom: 1px solid #b7b5b5;
 }
+
+.commentanddelete{
+  display: flex;
+  align-items: center;
+}
+
+.deleteComment{
+  position: absolute;
+  right: 0;
+}
